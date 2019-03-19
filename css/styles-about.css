@@ -6,6 +6,11 @@ body {
   font-size: 30px;
 }
 
+nav {
+  height: 60px;
+
+}
+
 div {
   min-height: 15vh;
   width: 95vw;
