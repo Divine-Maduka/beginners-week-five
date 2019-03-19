@@ -1,0 +1,39 @@
+body {
+  color: darkred;
+  font-family: arial serif;
+  margin: 30px;
+  text-align: center;
+  font-size: 30px;
+}
+
+div {
+  min-height: 15vh;
+  width: 95vw;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+img {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 30px;
+  margin: 20px;
+}
+
+ul{
+  list-style-position: inside;
+}
+
+a {
+  colour: darkturquoise;
+}
