@@ -1,11 +1,14 @@
 body {
-  color: darkred;
+  padding-top: 5rem;
+  color: linen;
   font-family: arial serif;
   margin: 30px;
   text-align: center;
   font-size: 30px;
 }
+main {
 
+}
 nav {
   height: 60px;
 
