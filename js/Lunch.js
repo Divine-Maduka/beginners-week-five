@@ -1,39 +1,81 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>jQuery UI Selectable - Default functionality</title>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
 
-  <style>
-  #feedback { font-size: 1.4em; }
-  #selectable .ui-selecting { background: #FECA40; }
-  #selectable .ui-selected { background: #F39814; color: white; }
-  #selectable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
-  #selectable li { margin: 3px; padding: 0.4em; font-size: 1.4em; height: 18px; }
-  </style>
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
-  $( function() {
-    $( "#selectable" ).selectable();
-  } );
-  </script>
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+</style>
 </head>
 <body>
 
-<ol id="selectable">
-  <li class="ui-widget-content">Item 1</li>
-  <li class="ui-widget-content">Item 2</li>
-  <li class="ui-widget-content">Item 3</li>
-  <li class="ui-widget-content">Item 4</li>
-  <li class="ui-widget-content">Item 5</li>
-  <li class="ui-widget-content">Item 6</li>
-  <li class="ui-widget-content">Item 7</li>
-</ol>
+<h2>My Phonebook</h2>
 
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+<ul id="myUL">
+  <li><a href="#">...</a></li>
+  <li><a href="#">Agnes</a></li>
+
+  <li><a href="#">Billy</a></li>
+  <li><a href="#">Bob</a></li>
+
+  <li><a href="#">Calvin</a></li>
+  <li><a href="#">Christina</a></li>
+  <li><a href="#">Cindy</a></li>
+</ul>
+
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
 
 </body>
 </html>
