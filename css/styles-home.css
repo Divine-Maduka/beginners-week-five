@@ -13,3 +13,7 @@ body {
 .extrapadding {
 padding-bottom: 2.5rem;
 }
+
+p {
+  padding-top: 3.5rem;
+}
