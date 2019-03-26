@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!doctype html>
 <html lang="en">
 <head>
@@ -79,3 +80,5 @@ function myFunction() {
 
 </body>
 </html>
+=======
+>>>>>>> 80605c0e2a3ea3cf69dc9078ed8cf577b3600348
